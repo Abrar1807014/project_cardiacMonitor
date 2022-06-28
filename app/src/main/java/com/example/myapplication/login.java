@@ -28,7 +28,7 @@ public class login extends AppCompatActivity {
                 {
                     //correct
                     Toast.makeText(login.this, "LOGIN SUCESSFULL", Toast.LENGTH_SHORT).show();
-                    Intent intent=new Intent(login.this,MainActivity.class);
+                    Intent intent=new Intent(login.this,DataPage.class);
                     startActivity(intent);
                     finish();
                 }

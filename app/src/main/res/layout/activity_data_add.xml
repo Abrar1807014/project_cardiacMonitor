@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DataAdd"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2196F3"
+        android:text="Date"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date"
+        android:background="#2196F3"
+        android:text="Time"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/etFirstName"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="#52009688"
+        android:hint="Systolic mm Hg"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/etLastName"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etFirstName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="#52009688"
+        android:hint="Diastolic mm Hg"
+        android:textSize="20dp" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/etFavFood"
+        android:layout_below="@+id/etLastName"
+        android:layout_centerHorizontal="true"
+        android:background="#52009688"
+        android:layout_marginTop="20dp"
+        android:hint="Heart Rate bpm"
+        android:textSize="20dp"/>
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etFavFood"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:text="Back"
+        android:background="@drawable/roundedbtn"/>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/submit"
+        android:layout_below="@+id/etFavFood"
+        android:background="@drawable/roundedbtn"
+        android:layout_alignParentEnd="true" />
+
+
+
+</RelativeLayout>

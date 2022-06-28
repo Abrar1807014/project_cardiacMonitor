@@ -101,7 +101,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent=new Intent(Register.this,MainActivity.class);
+                Intent intent=new Intent(Register.this,DataPage.class);
                 startActivity(intent);
             }
         });
