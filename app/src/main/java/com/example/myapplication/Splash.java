@@ -40,7 +40,7 @@ public class Splash extends AppCompatActivity {
                 }
                 else{
                     timer.cancel();
-                    Intent intent=new Intent(Splash.this, DataPage.class);
+                    Intent intent=new Intent(Splash.this, login.class);
                     startActivity(intent);
                     finish();
                 }
