@@ -29,7 +29,7 @@ public class DataAdd extends AppCompatActivity {
         ctime=findViewById(R.id.time);
         systolic=findViewById(R.id.etFirstName);
         diastolic=findViewById(R.id.etLastName);
-        bpm=findViewById(R.id.etLastName);
+        bpm=findViewById(R.id.etFavFood);
         back=findViewById(R.id.back);
         submit=findViewById(R.id.submit);
 
