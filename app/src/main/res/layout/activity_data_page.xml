@@ -5,49 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DataPage"
-    android:background="@drawable/splasimage">
+    android:background="@color/black">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="411dp"
-        android:layout_height="81dp"
-        android:text="Welcome"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/records"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="86dp"
-            android:layout_marginTop="220dp"
-            android:background="@drawable/roundedbtn"
-            android:text="RECORDS"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            android:layout_height="323dp"
+            android:background="@drawable/wallpaper3">
 
-        <Button
-            android:id="@+id/add"
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="86dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/roundedbtn"
-            android:text="ADD DATA"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#1B1A17">
+            <Button
+                android:id="@+id/records"
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/roundedbtn"
+                android:text="RECORDS"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <Button
+                android:id="@+id/add"
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/roundedbtn"
+                android:text="ADD DATA"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+        </LinearLayout>
+
 
     </LinearLayout>
 

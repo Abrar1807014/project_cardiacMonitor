@@ -45,8 +45,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.dias.setText(model.getDiastolic());
         holder.hr.setText(model.getBpm());
         holder.com.setText(model.getComment());
-
-
+        holder.user_com.setText(model.getUser_comment());
 
     }
 
@@ -56,7 +55,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView date, time, sys, dias, hr, com;
+        TextView date, time, sys, dias, hr, com, user_com;
         LinearLayout llrow;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -67,6 +66,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             dias = itemView.findViewById(R.id.diastolic_bp);
             hr=itemView.findViewById(R.id.heart_rate);
             com=itemView.findViewById(R.id.comment);
+            user_com=itemView.findViewById(R.id.userComment);
             llrow=itemView.findViewById(R.id.main);
 
             itemView.setOnClickListener(new View.OnClickListener() {

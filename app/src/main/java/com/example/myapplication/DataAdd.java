@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,8 +29,8 @@ import java.util.Locale;
 
 public class DataAdd extends AppCompatActivity {
     TextView date, ctime;
-    EditText systolic, diastolic, bpm;
-    Button back, submit;
+    EditText systolic, diastolic, bpm, user_comment;
+    Button  submit;
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = firebaseDatabase.getReference().child("Data");
     DatabaseReference dref;
@@ -40,13 +41,14 @@ public class DataAdd extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_add);
+        getSupportActionBar().hide();
 
         date=findViewById(R.id.date);
         ctime=findViewById(R.id.time);
         systolic=findViewById(R.id.etFirstName);
         diastolic=findViewById(R.id.etLastName);
         bpm=findViewById(R.id.etFavFood);
-        //back=findViewById(R.id.back);
+        user_comment = findViewById(R.id.today);
         submit=findViewById(R.id.submit);
 
 
@@ -67,6 +69,7 @@ public class DataAdd extends AppCompatActivity {
                 String s=systolic.getText().toString();
                 String d=diastolic.getText().toString();
                 String b=bpm.getText().toString();
+                String user_com = user_comment.getText().toString();
                 String com;
 
                 if(s.length()!=0 && d.length()!=0 && b.length()!=0)
@@ -77,7 +80,7 @@ public class DataAdd extends AppCompatActivity {
                     usermap.put("systolic", s);
                     usermap.put("diastolic", d);
                     usermap.put("bpm", b);
-                    //usermap.put("ID", id);
+                    usermap.put("user_comment", user_com);
 
 
 

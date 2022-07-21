@@ -1,18 +1,28 @@
 package com.example.myapplication;
 
 public class Model {
-    String Date, Time, systolic, diastolic, bpm, comment;
+    String Date, Time, systolic, diastolic, bpm, comment, user_comment;
 
     public Model() {
     }
 
-    public Model(String date, String time, String systolic, String diastolic, String bpm, String comment) {
+
+    public Model(String date, String time, String systolic, String diastolic, String bpm, String comment, String user_comment) {
         Date = date;
         Time = time;
         this.systolic = systolic;
         this.diastolic = diastolic;
         this.bpm = bpm;
         this.comment = comment;
+        this.user_comment = user_comment;
+    }
+
+    public String getUser_comment() {
+        return user_comment;
+    }
+
+    public void setUser_comment(String user_comment) {
+        this.user_comment = user_comment;
     }
 
     public String getDate() {
