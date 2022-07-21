@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Records"
-    android:background="@drawable/splasimage">
+    android:background="@drawable/gridwallpaper2">
 
 
     <androidx.recyclerview.widget.RecyclerView

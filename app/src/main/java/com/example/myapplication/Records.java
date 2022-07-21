@@ -10,6 +10,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -36,12 +37,13 @@ public class Records extends AppCompatActivity implements for_update{
     Adapter adapter;
     ArrayList<Model> list;
 
-    EditText sys, dias, bpm;
+    EditText sys, dias, bpm, user_com;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_records);
+        getSupportActionBar().hide();
 
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -109,6 +111,7 @@ public class Records extends AppCompatActivity implements for_update{
         sys=dialog.findViewById(R.id.edit_systolic_bp);
         dias=dialog.findViewById(R.id.edit_diastolic_bp);
         bpm=dialog.findViewById(R.id.edit_heart_rate);
+        user_com=dialog.findViewById(R.id.edit_your_comment);
         e=dialog.findViewById(R.id.edit_date_of_submission);
         f=dialog.findViewById(R.id.edit_time);
         Button u = dialog.findViewById(R.id.updater);
@@ -117,6 +120,7 @@ public class Records extends AppCompatActivity implements for_update{
         sys.setText(s);
         dias.setText(list.get(position).diastolic);
         bpm.setText(list.get(position).bpm);
+        user_com.setText(list.get(position).user_comment);
         e.setText(list.get(position).Date);
         f.setText(list.get(position).Time);
 
@@ -125,11 +129,11 @@ public class Records extends AppCompatActivity implements for_update{
         u.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String a, b, c, com, editdate, edittime;
+                String a, b, c, com, editdate, edittime, user_comment;
                 a=sys.getText().toString();
                 b=dias.getText().toString();
                 c=bpm.getText().toString();
-
+                user_comment = user_com.getText().toString();
 
                 editdate=currentDate;
                 edittime=time;
@@ -142,6 +146,7 @@ public class Records extends AppCompatActivity implements for_update{
                 usermap.put("systolic", a);
                 usermap.put("diastolic", b);
                 usermap.put("bpm", c);
+                usermap.put("user_comment", user_comment);
                 usermap.put("Date", editdate);
                 usermap.put("Time", edittime);
 
