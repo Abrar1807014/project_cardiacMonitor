@@ -28,6 +28,11 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 
+/**
+ * shows all the records
+ * delete a record
+ * update a record
+ */
 public class Records extends AppCompatActivity implements for_update{
 
     RecyclerView recyclerView;
@@ -56,6 +61,10 @@ public class Records extends AppCompatActivity implements for_update{
 
 
         databaseReference.addValueEventListener(new ValueEventListener() {
+            /**
+             * fetches data from database
+             * @param snapshot
+             */
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
@@ -75,11 +84,23 @@ public class Records extends AppCompatActivity implements for_update{
     }
     //for deleting
     ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT) {
+        /**
+         * nothing will happen on data move
+         * @param recyclerView
+         * @param viewHolder
+         * @param target
+         * @return
+         */
         @Override
         public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
             return false;
         }
 
+        /**
+         * for deleting a record on swip both left & right
+         * @param viewHolder
+         * @param direction
+         */
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
             String date = list.get(viewHolder.getLayoutPosition()).Date;
@@ -95,6 +116,11 @@ public class Records extends AppCompatActivity implements for_update{
         }
     };
 
+    /**
+     * if a view if touched
+     * it will open an dialogue for updating data
+     * @param position
+     */
     @Override
     public void onTouch(int position) {
         TextView e, f;
@@ -127,6 +153,10 @@ public class Records extends AppCompatActivity implements for_update{
         //Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
         dialog.show();
         u.setOnClickListener(new View.OnClickListener() {
+            /**
+             * will update data stored in databse
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 String a, b, c, com, editdate, edittime, user_comment;
