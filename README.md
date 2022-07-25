@@ -8,4 +8,4 @@ In this app
 * User will be able to delete their data on swip.
 * User will be able to update any data except date and time as they are auto generated during measurements.
 
-For more details check our wiki
+For more details check our [wiki] (https://github.com/Abrar1807014/project_cardiacMonitor/wiki)
