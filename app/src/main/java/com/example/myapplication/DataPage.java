@@ -12,31 +12,39 @@ import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+/**
+ * Home Page
+ * Holds two buttons which shows
+ * the records and adds data
+ */
 public class DataPage extends AppCompatActivity {
-    Button button;
-    Button floatingActionButton;
+    public Button button;
+    public Button button2;
+    public ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_page);
 
-        ActionBar actionBar;
+
         actionBar = getSupportActionBar();
 
-        // Define ColorDrawable object and parse color
-        // using parseColor method
-        // with color hash code as its parameter
+
         ColorDrawable colorDrawable
                 = new ColorDrawable(Color.parseColor("#1F4690"));
 
-        // Set BackgroundDrawable
+
         actionBar.setBackgroundDrawable(colorDrawable);
 
         button=findViewById(R.id.records);
-        floatingActionButton=findViewById(R.id.add);
+        button2=findViewById(R.id.add);
 
         button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * takes the user to Record Page
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DataPage.this, Records.class);
@@ -44,7 +52,11 @@ public class DataPage extends AppCompatActivity {
             }
         });
 
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+        button2.setOnClickListener(new View.OnClickListener() {
+            /**
+             * takes the user to Data Add Page
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(DataPage.this, DataAdd.class);

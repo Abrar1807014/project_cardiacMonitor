@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Logs an user in the app
+ */
 public class login extends AppCompatActivity {
 
     @Override
@@ -22,6 +25,10 @@ public class login extends AppCompatActivity {
         Button button2 = (Button) findViewById(R.id.button2);
 
         button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * checks the user name and password for security reasons
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin"))
@@ -39,6 +46,11 @@ public class login extends AppCompatActivity {
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
+            /**
+             * if the user doesn't have an account
+             * takes the user to register page
+             * @param v
+             */
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(login.this,Register.class);

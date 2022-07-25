@@ -9,7 +9,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+/**
+ * registers a new user
+ */
 public class Register extends AppCompatActivity {
 
     @Override

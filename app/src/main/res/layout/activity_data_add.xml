@@ -38,7 +38,9 @@
         android:layout_marginTop="100dp"
         android:background="#52009688"
         android:hint="Systolic mm Hg"
-        android:textSize="20dp" />
+        android:inputType="number"
+        android:textSize="20dp"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/etLastName"
@@ -49,7 +51,9 @@
         android:layout_marginTop="20dp"
         android:background="#52009688"
         android:hint="Diastolic mm Hg"
-        android:textSize="20dp" />
+        android:inputType="number"
+        android:textSize="20dp"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/etFavFood"
@@ -60,7 +64,9 @@
         android:layout_marginTop="20dp"
         android:background="#52009688"
         android:hint="Heart Rate bpm"
-        android:textSize="20dp" />
+        android:inputType="number"
+        android:textSize="20dp"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/today"
@@ -71,7 +77,8 @@
         android:layout_marginTop="20dp"
         android:background="#52009688"
         android:hint="Write your comment"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        tools:ignore="TouchTargetSizeCheck" />
 
 
 
