@@ -10,10 +10,6 @@ import android.widget.ProgressBar;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * splash screen
- * opens at the beginning of app start
- */
 public class Splash extends AppCompatActivity {
     ProgressBar progressBar;
     Timer timer;
