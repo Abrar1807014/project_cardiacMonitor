@@ -29,7 +29,6 @@ import java.util.Locale;
 public class DataAdd extends AppCompatActivity {
     TextView date, ctime;
     EditText systolic, diastolic, bpm;
-    DataSaver dataSaver;
     Button back, submit;
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = firebaseDatabase.getReference().child("Data");
@@ -50,7 +49,6 @@ public class DataAdd extends AppCompatActivity {
         //back=findViewById(R.id.back);
         submit=findViewById(R.id.submit);
 
-        dataSaver = new DataSaver(this);
 
         Calendar calendar=Calendar.getInstance();
         String currentDate= DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
@@ -116,17 +114,6 @@ public class DataAdd extends AppCompatActivity {
                       systolic.setText("");
                       diastolic.setText("");
                       bpm.setText("");
-                    //boolean insert = dataSaver.addData(s, d, b);
-                    //if(insert==true)
-                    //{
-                      //  Toast.makeText(DataAdd.this, "Data Added", Toast.LENGTH_SHORT).show();
-                      //  systolic.setText("");
-                      //  diastolic.setText("");
-                      //  bpm.setText("");
-                    //}
-                    //else {
-                      //  Toast.makeText(DataAdd.this, "Fill in correctly", Toast.LENGTH_SHORT).show();
-                   // }
 
 
                 }
