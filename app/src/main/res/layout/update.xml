@@ -159,14 +159,16 @@
                 android:textStyle="bold"
                 android:textSize="20sp"
                 android:padding="5dp"/>
+
             <EditText
+                android:id="@+id/edit_your_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="data"
-                android:textSize="20sp"
-                android:textColor="@color/black"
                 android:layout_marginStart="10dp"
-                android:id="@+id/edit_your_comment"/>
+                android:inputType="text"
+                android:text="data"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
         </LinearLayout>
 

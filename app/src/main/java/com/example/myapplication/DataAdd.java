@@ -27,24 +27,16 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 
-/**
- * This class takes input from users and
- * adds them to the respective firebase database
- */
 public class DataAdd extends AppCompatActivity {
     TextView date, ctime;
     EditText systolic, diastolic, bpm, user_comment;
     Button  submit;
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference = firebaseDatabase.getReference().child("Data");
+    DatabaseReference dref;
+    String id;
+    int i;
 
-
-    /**
-     *
-     * @param savedInstanceState
-     * this assigns each TextView, EditText and Button their respective ids
-     * Holds the OnClick method
-     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,13 +61,7 @@ public class DataAdd extends AppCompatActivity {
         String time=currentTime.format(calendar.getTime());
         ctime.setText(time);
 
-
         submit.setOnClickListener(new View.OnClickListener() {
-            /**
-             * onClick of the submit button
-             * inputs are checked and inserted in firebase database
-             * @param v
-             */
             @Override
             public void onClick(View v) {
                 //id = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -86,7 +72,7 @@ public class DataAdd extends AppCompatActivity {
                 String user_com = user_comment.getText().toString();
                 String com;
 
-                if(s.length()!=0 && d.length()!=0 && b.length()!=0 )
+                if(s.length()!=0 && d.length()!=0 && b.length()!=0)
                 {
                     HashMap<String, String> usermap = new HashMap<>();
                     usermap.put("Date", currentDate);
@@ -102,57 +88,44 @@ public class DataAdd extends AppCompatActivity {
                     Integer intd = Integer.parseInt(d);
                     Integer intb = Integer.parseInt(b);
 
-                    if(ints>0 && intd>0 && intb>0)
+                    if(ints<120 && intd<80)
                     {
-                        if(ints<120 && intd<80)
-                        {
-                            com = "Normal";
-                            usermap.put("comment", com);
-                        }
-                        else if ((ints<=129 && ints>=120) && intd <80)
-                        {
-                            com = "Elevated";
-                            usermap.put("comment", com);
-                        }
-                        else if ((ints<=139 && ints>=130) || (intd >=80 && intd<=89))
-                        {
-                            com = "High Blood Pressure_Stage 1";
-                            usermap.put("comment", com);
-                        }
-                        else if (ints>=140 || intd>=90)
-                        {
-                            com = "High Blood Pressure_Stage 2";
-                            usermap.put("comment", com);
-                        }
-                        String key=currentDate+time;
-                        String key1 = key.replaceAll("\\s", "");
-                        databaseReference.child(key1).setValue(usermap);
+                        com = "Normal";
+                        usermap.put("comment", com);
+                    }
+                    else if ((ints<=129 && ints>=120) && intd <80)
+                    {
+                        com = "Elevated";
+                        usermap.put("comment", com);
+                    }
+                    else if ((ints<=139 && ints>=130) || (intd >=80 && intd<=89))
+                    {
+                        com = "High Blood Pressure_Stage 1";
+                        usermap.put("comment", com);
+                    }
+                    else if (ints>=140 || intd>=90)
+                    {
+                        com = "High Blood Pressure_Stage 2";
+                        usermap.put("comment", com);
+                    }
+                    String key=currentDate+time;
+                    String key1 = key.replaceAll("\\s", "");
+                    databaseReference.child(key1).setValue(usermap);
 
 
-                        Toast.makeText(DataAdd.this,  "Data added", Toast.LENGTH_SHORT).show();
-                        systolic.setText("");
-                        diastolic.setText("");
-                        bpm.setText("");
-                        Intent it = new Intent(DataAdd.this, DataPage.class);
-                        startActivity(it);
+                    Toast.makeText(DataAdd.this,  "Data added", Toast.LENGTH_SHORT).show();
+                      systolic.setText("");
+                      diastolic.setText("");
+                      bpm.setText("");
 
-                    }
-                    else if(ints<=0){
-                        systolic.setText("Invalid Input");
-                    }
-                    else if(intd<=0){
-                        diastolic.setText("Invalid Input");
-                    }
-                    else if(intb<=0){
-                        bpm.setText("Invalid Input");
-                    }
 
                 }
                 else
                 {
                     Toast.makeText(DataAdd.this, "Value not inserted correctly", Toast.LENGTH_SHORT).show();
                 }
-
+                Intent it = new Intent(DataAdd.this, DataPage.class);
+                startActivity(it);
             }
 
 

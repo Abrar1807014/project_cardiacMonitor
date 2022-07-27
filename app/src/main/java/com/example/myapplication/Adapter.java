@@ -14,9 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-/**
- * Adapter Class for converting ArrayList of objects into View
- */
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     ArrayList<Model> arrayList;
@@ -24,26 +21,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     private final for_update for_update;
 
-    /**
-     *
-     * @param arrayList
-     * @param context
-     * @param for_update
-     *
-     */
     public Adapter(ArrayList<Model> arrayList, Context context, for_update for_update) {
         this.arrayList = arrayList;
         this.context = context;
         this.for_update = for_update;
     }
 
-    /**
-     *
-     * @param parent
-     * @param viewType
-     * @return
-     * ViewHolder describes an Item View about it's position in Recycler View
-     */
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -52,12 +35,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
 
-    /**
-     *
-     * @param holder
-     * @param position
-     *  BindViewHolder generates a binding class for each XML layout 'layout' file
-     */
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Model model = arrayList.get(position);
@@ -71,21 +49,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     }
 
-    /**
-     * getIteCount returns the number total inputs
-     * @return
-     */
     @Override
     public int getItemCount() {
         return arrayList.size();
     }
 
-    /**
-     * ViewHolder describes an Item View about it's position in Recycler View
-     */
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView date, time, sys, dias, hr, com, user_com;
-        public LinearLayout llrow;
+        TextView date, time, sys, dias, hr, com, user_com;
+        LinearLayout llrow;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
