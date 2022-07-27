@@ -21,6 +21,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     private final for_update for_update;
 
+    /**
+     *
+     * @param arrayList
+     * @param context
+     * @param for_update
+     */
     public Adapter(ArrayList<Model> arrayList, Context context, for_update for_update) {
         this.arrayList = arrayList;
         this.context = context;

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DataPage"
+    android:id="@+id/data_page"
     android:background="@drawable/splasimage">
 
     <TextView
