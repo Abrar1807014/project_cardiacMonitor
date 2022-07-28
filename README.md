@@ -1,4 +1,4 @@
-## cardiacMonitor
+## 14_29 cardiacMonitor
 
 Cardiac Monitor is a simple, interactive app for storing measured blood pressure and heart rate.
 In this app 
@@ -11,4 +11,9 @@ In this app
 For more detailed documentation, information of contributers and implementation details check our [wiki](https://github.com/Abrar1807014/project_cardiacMonitor/wiki)
 
 
+<img src="https://github.com/Abrar1807014/project_cardiacMonitor/blob/master/documents/1.jpeg" height=400 width=250> <img src="https://github.com/Abrar1807014/project_cardiacMonitor/blob/master/documents/2.jpeg" height=400 width=250>
+<img src="https://github.com/Abrar1807014/project_cardiacMonitor/blob/master/documents/3.jpeg" height=400 width=250>
+
+<img src="https://github.com/Abrar1807014/project_cardiacMonitor/blob/master/documents/4.jpg" height=400 width=250> <img src="https://github.com/Abrar1807014/project_cardiacMonitor/blob/master/documents/5.jpeg" height=400 width=250>
+<img src="https://github.com/Abrar1807014/project_cardiacMonitor/blob/master/documents/6.jpeg" height=400 width=250>
 
